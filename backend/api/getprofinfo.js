@@ -19,7 +19,8 @@ async function getProfInfo(req, res){
         }
         const resdata = {
             highedu: userdata.highedu,
-            profession: userdata.profession
+            profession: userdata.profession,
+            interests: userdata.interests
         };
         res.status(200).send(resdata);
         return;

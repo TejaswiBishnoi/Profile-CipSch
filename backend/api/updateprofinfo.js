@@ -27,6 +27,13 @@ async function updateProfInfo(req, res){
             res.status(400).send('Bad Request!');
             return;
         }
+        if (req.body.interests && (req.body.interests != "" && req.body.interests.match(/^[0|1]{8}$/gm))){
+            updt.interests = req.body.interests;
+        }
+        else if (req.body.interests){
+            res.status(400).send('Bad Request!');
+            return;
+        }
         let userdata = await col.updateOne({email: req.user}, {$set:updt});
         if (!userdata){
             res.status(500).send('Server Error!');

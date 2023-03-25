@@ -29,6 +29,7 @@ app.get('/api/getprofinfo', authMiddleware, (req, res)=>{console.log('Get Profes
 
 app.post('/api/updateprofinfo', authMiddleware, (req, res)=>{console.log('Update Professional Info'); require('./api/updateprofinfo').updateProfInfo(req,res)});
 
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 });
