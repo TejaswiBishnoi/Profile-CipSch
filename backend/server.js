@@ -29,6 +29,19 @@ app.get('/api/getprofinfo', authMiddleware, (req, res)=>{console.log('Get Profes
 
 app.post('/api/updateprofinfo', authMiddleware, (req, res)=>{console.log('Update Professional Info'); require('./api/updateprofinfo').updateProfInfo(req,res)});
 
+const multerStorage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "avatars");
+  },
+  filename: (req, file, cb) => {
+    var namef = Date.now().toString() + '-' + req.user;
+    cb(null, `${namef}.png`);
+  },
+});
+
+const upload = multer({ storage: multerStorage });
+
+app.post('/api/updatepicture', authMiddleware, upload.single('file'), (req, res)=>{console.log('Update Profile Pic'); require('./api/updatepicture').updatePicture(req, res)});
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
