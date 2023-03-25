@@ -25,6 +25,8 @@ app.get('/api/getwebprofiles', authMiddleware, (req, res)=>{console.log('Get Web
 
 app.post('/api/updatewebprofiles', authMiddleware, (req, res)=>{console.log('Update Web Profiles'); require('./api/updatewebprofiles').updateWebProfiles(req, res)})
 
+app.get('/api/getprofinfo', authMiddleware, (req, res)=>{console.log('Get Professional Info'); require('./api/getprofinfo').getProfInfo(req, res);})
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 });
