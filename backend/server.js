@@ -43,6 +43,8 @@ const upload = multer({ storage: multerStorage });
 
 app.post('/api/updatepicture', authMiddleware, upload.single('file'), (req, res)=>{console.log('Update Profile Pic'); require('./api/updatepicture').updatePicture(req, res)});
 
+app.get('/api/getpicture', authMiddleware, express.static('avatars'), (req, res)=>{console.log('Get Picture'); require('./api/getpicture').getPicture(req, res);});
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 });
