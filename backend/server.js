@@ -45,6 +45,8 @@ app.post('/api/updatepicture', authMiddleware, upload.single('file'), (req, res)
 
 app.get('/api/getpicture', authMiddleware, express.static('avatars'), (req, res)=>{console.log('Get Picture'); require('./api/getpicture').getPicture(req, res);});
 
+app.get('/api/getfollowers', authMiddleware, (req, res)=>{console.log('Get Followers'); require('./api/getfollowers').getFollowers(req, res)})
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 });

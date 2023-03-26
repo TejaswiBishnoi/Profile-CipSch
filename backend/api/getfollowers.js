@@ -1,7 +1,7 @@
 var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://localhost:27017/";
 
-async function getProfile(req, res){
+async function getFollowers(req, res){
     const client = await MongoClient.connect(url, { useNewUrlParser: true })
         .catch(err => { console.log(err); });
 
@@ -9,7 +9,7 @@ async function getProfile(req, res){
         return;
     }
     let db = client.db('Profile');
-    let col = db.collection('users');
+    let col = db.collection('followers');
     let offset, limit;
     
     if (req.query.limit) limit = req.query.limit;
@@ -19,19 +19,20 @@ async function getProfile(req, res){
     else offset = 0;
     
     try{
-        let userdata = await col.findOne({email: req.user});
-        if (!userdata){
+        let initdata = await col.find({following: req.user}, {projection:{follower: 1, _id: 0}}).skip(offset).limit(limit).toArray();
+        if (!initdata){
             res.status(500).send('Server Error!');
             return;
         }
-        const resdata = {
-            email: userdata.email,
-            fname: userdata.fname,
-            lname: userdata.lname,
-            profpic: userdata.profpic,
-            mobile: userdata.mobile,
-            about: userdata.about
-        };
+        //console.log(initdata)
+        const resdata = []
+        for (var i = 0; i < initdata.length; i++){
+            let userdata = await db.collection('users').findOne({email: initdata[i].follower}, {projection: {fname: 1, lname: 1, _id: 0}});
+            let userdata2 = await db.collection('profinfo').findOne({email: initdata[i].follower}, {projection: {profession: 1}});
+            userdata.profession = userdata2.profession;
+            //console.log(userdata);
+            resdata.push(userdata);
+        }
         res.status(200).send(resdata);
         return;
     }
@@ -42,4 +43,4 @@ async function getProfile(req, res){
     }
 }
 
-module.exports.getProfile = getProfile;
+module.exports.getFollowers = getFollowers;

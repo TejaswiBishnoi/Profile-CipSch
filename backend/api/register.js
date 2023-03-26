@@ -49,7 +49,8 @@ async function register(req, res){
         passhash: await passhash,
         mobile: req.body.mobile,
         about: "",
-        profpic: ""
+        profpic: "",
+        followers: 0
     };
     try{
         let ins = await col.insertOne(userobj);
