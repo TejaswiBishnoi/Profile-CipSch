@@ -12,7 +12,7 @@ async function getPicture(req, res){
     let col = db.collection('users');
     //console.log('AA')
     try{
-        let userdata = await col.findOne({email: req.user});
+        let userdata = await col.findOne({email: req.user}, {projection:{profpic: 1}});
         if (!userdata){
             res.status(500).send('Server Error!');
             return;

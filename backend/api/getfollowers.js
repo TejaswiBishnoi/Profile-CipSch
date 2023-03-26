@@ -10,14 +10,29 @@ async function getProfile(req, res){
     }
     let db = client.db('Profile');
     let col = db.collection('users');
-    console.log('AA')
+    let offset, limit;
+    
+    if (req.query.limit) limit = req.query.limit;
+    else limit = 14;
+
+    if (req.query.page) offset = (req.query.page - 1)*limit;
+    else offset = 0;
+    
     try{
-        let userdata = await col.findOne({email: req.user}, {projection:{_id: 0, passhash: 0}});
+        let userdata = await col.findOne({email: req.user});
         if (!userdata){
             res.status(500).send('Server Error!');
             return;
         }
-        res.status(200).send(userdata);
+        const resdata = {
+            email: userdata.email,
+            fname: userdata.fname,
+            lname: userdata.lname,
+            profpic: userdata.profpic,
+            mobile: userdata.mobile,
+            about: userdata.about
+        };
+        res.status(200).send(resdata);
         return;
     }
     catch(e){

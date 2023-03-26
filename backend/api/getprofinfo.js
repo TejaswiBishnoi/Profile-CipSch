@@ -12,17 +12,17 @@ async function getProfInfo(req, res){
     let col = db.collection('profinfo');
     //console.log('AA')
     try{
-        let userdata = await col.findOne({email: req.user});
+        let userdata = await col.findOne({email: req.user}, {projection:{_id: 0, email: 0}});
         if (!userdata){
             res.status(500).send('Server Error!');
             return;
         }
-        const resdata = {
-            highedu: userdata.highedu,
-            profession: userdata.profession,
-            interests: userdata.interests
-        };
-        res.status(200).send(resdata);
+        // const resdata = {
+        //     highedu: userdata.highedu,
+        //     profession: userdata.profession,
+        //     interests: userdata.interests
+        // };
+        res.status(200).send(userdata);
         return;
     }
     catch(e){

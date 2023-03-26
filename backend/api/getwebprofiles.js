@@ -10,22 +10,14 @@ async function getWebProfiles(req, res){
     }
     let db = client.db('Profile');
     let col = db.collection('webprofiles');
-    console.log('AA')
+    //console.log('AA')
     try{
-        let userdata = await col.findOne({email: req.user});
+        let userdata = await col.findOne({email: req.user}, {projection: {_id:0, email:0}});
         if (!userdata){
             res.status(500).send('Server Error!');
             return;
         }
-        const resdata = {
-            linkedin: userdata.linkedin,
-            github: userdata.github,
-            facebook: userdata.facebook,
-            instagram: userdata.instagram,
-            twitter: userdata.twitter,
-            website: userdata.website
-        };
-        res.status(200).send(resdata);
+        res.status(200).send(userdata);
         return;
     }
     catch(e){
