@@ -1,0 +1,12 @@
+.AboutMainField fieldset {
+  border: 0;
+  padding: 0px;
+}
+.AboutMainField textarea{
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 14px;
+    font-weight: 500;
+}
