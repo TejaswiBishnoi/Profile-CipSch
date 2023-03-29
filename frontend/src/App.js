@@ -19,6 +19,14 @@ function App() {
                 main: 'rgba(8,15,15,.85)',
                 contrastText: '#ffffff'
             },
+            unselect:{
+                main: '#f2f5fa',
+                contrastText: '#2c3232'
+            },
+            interest:{
+                main: 'rgba(243, 145, 46, 0.1)',
+                contrastText: '#f3912e'
+            }
         },
         typography:{
             name_large:{

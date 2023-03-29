@@ -1,7 +1,6 @@
 import { Box, Stack, SvgIcon, TextField } from "@mui/material";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import './aboutfield.css'
-import svgg from './SVGs/Github.svg'
 
 function LinkText(props){
     function handleChange(e){
