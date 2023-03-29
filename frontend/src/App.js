@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { ThemeProvider, createTheme } from '@mui/material';
+import { Stack, ThemeProvider, createTheme } from '@mui/material';
 import { createContext, useState } from 'react';
 import dataContext from './components/datacontext';
 import Userbox from './components/userbox';
@@ -63,8 +63,10 @@ function App() {
             <ThemeProvider theme={theme}>
                 <dataContext.Provider value={data}>
                     <setdataContext.Provider value={setData}>
-                        <Userbox/>
-                        <MainContainer/>
+                        <Stack overflow={'visible'} height={'100vh'} direction={'column'}>
+                            <Userbox/>
+                            <MainContainer/>
+                        </Stack>
                     </setdataContext.Provider>
                 </dataContext.Provider>
             </ThemeProvider>
