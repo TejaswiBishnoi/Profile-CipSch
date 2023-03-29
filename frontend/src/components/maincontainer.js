@@ -13,7 +13,7 @@ function MainContainer(){
                 <Divider/>
                 <LinkComp theme={thm}/>
                 <Divider/>
-                <PassAndSec theme={thm}/>
+                <PassAndSec theme={thm}/>                
             </Stack>
         </Box>
     )
