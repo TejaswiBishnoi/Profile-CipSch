@@ -1,5 +1,6 @@
 import { Box, Button, Grid, Stack, Typography } from "@mui/material";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import PopOver from "./popovers";
 
 function FlipSVG(){
     return(
@@ -60,6 +61,7 @@ function ProfInfo(props){
     const [highedu, setHighedu] = useState(0);
     const [profession, setProfession] = useState(0);
     const [id, setId] = useState([0, 0]);
+    const [width, setWidth] = useState(0);
     function handleChange(){
         if (!status){
             setOpen1(false);
@@ -69,19 +71,28 @@ function ProfInfo(props){
     }
     const ref = useRef();
     useLayoutEffect(()=>{
-        console.log(ref.current);
+        setWidth(ref.current.clientWidth)
     }, [])
     const [open1, setOpen1] = useState(false);
     const [open2, setOpen2] = useState(false);
     const [anchorEl1, setAnchorEl1] = useState(null);
     const [anchorEl2, setAnchorEl2] = useState(null);
     function handleOpen1(event){
+        //console.log(width)
         setAnchorEl1(event.currentTarget);
         setOpen1(true);
     }
     function handleOpen2(event){
         setAnchorEl2(event.currentTarget);
         setOpen2(true);
+    }
+    function handleClose1(event){
+        setOpen1(false);
+        setAnchorEl1(null);        
+    }
+    function handleClose2(event){
+        setOpen2(false);
+        setAnchorEl2(null);
     }
 
     return (
@@ -101,7 +112,7 @@ function ProfInfo(props){
                     <Typography align="left" mb={1} fontSize={'15px'} color={props.theme.headFont} fontWeight={'510'}>
                         Highest education
                     </Typography>
-                    <Button onClick={()=>{if(!status)setOpen1(!open1)}} variant="contained" color="select" sx={{width: '100%', borderRadius: '8px', px: '16px'}} disableElevation disableRipple>
+                    <Button ref={ref} onClick={(e)=>{if(!status)handleOpen1(e)}} variant="contained" color="select" sx={{width: '100%', borderRadius: '8px', px: '16px'}} disableElevation disableRipple>
                         <Stack alignItems={'center'} width={'100%'} direction={'row'} justifyContent={'space-between'}>
                             <Typography textTransform={'none'} align="left" fontWeight={'500'} fontSize={'14px'}>
                                 {EMapping[id[0]].value}
@@ -111,12 +122,13 @@ function ProfInfo(props){
                             </Box>
                         </Stack>
                     </Button>
+                    <PopOver pid={0} setId={setId} id={id} Mapping={EMapping} open={open1} width={width} handleClose={handleClose1} anchorEl={anchorEl1}/>
                 </Grid>
                 <Grid xs={6} item>
                     <Typography mb={1} align="left" fontSize={'15px'} color={props.theme.headFont} fontWeight={'510'}>
                         What do you do currently?
                     </Typography>
-                    <Button onClick={()=>{if(!status)setOpen2(!open2)}} variant="contained" color="select" sx={{width: '100%', borderRadius: '8px', px: '16px'}} disableElevation disableRipple>
+                    <Button onClick={(e)=>{if(!status)handleOpen2(e)}} variant="contained" color="select" sx={{width: '100%', borderRadius: '8px', px: '16px'}} disableElevation disableRipple>
                         <Stack alignItems={'center'} width={'100%'} direction={'row'} justifyContent={'space-between'}>
                             <Typography textTransform={'none'} align="left" fontWeight={'500'} fontSize={'14px'}>
                                 {PMapping[id[1]].value}
@@ -126,6 +138,7 @@ function ProfInfo(props){
                             </Box>
                         </Stack>
                     </Button>
+                    <PopOver pid={1} setId={setId} id={id} Mapping={PMapping} open={open2} width={width} handleClose={handleClose2} anchorEl={anchorEl2}/>
                 </Grid>
             </Grid>
         </Box>
