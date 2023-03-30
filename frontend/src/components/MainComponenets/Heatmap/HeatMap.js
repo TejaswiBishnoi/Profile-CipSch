@@ -1,104 +1,9 @@
 import { Box, Stack, Typography } from '@mui/material';
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import CalendarHeatmap from 'react-calendar-heatmap';
-import 'react-calendar-heatmap/dist/styles.css';
+//import 'react-calendar-heatmap/dist/styles.css';
 import "./style.css"
-
-const NameList =[
-    {date: '2022-05-16', count:4},
-    {date: '2022-05-23', count:4},
-    {date: '2022-05-30', count:4},
-    {date: '2022-06-06', count:4},
-    {date: '2022-06-13', count:4},
-    {date: '2022-05-31', count:4},
-    {date: '2022-06-01', count:4},
-    {date: '2022-06-02', count:4},
-    {date: '2022-06-03', count:4},
-
-    {date: '2022-06-27', count:4},
-    {date: '2022-07-04', count:4},
-    {date: '2022-07-11', count:4},
-    {date: '2022-06-28', count:4},
-    {date: '2022-06-29', count:4},
-    {date: '2022-07-06', count:4},
-    {date: '2022-07-13', count:4},
-    {date: '2022-06-30', count:4},
-    {date: '2022-07-01', count:4},
-    {date: '2022-07-08', count:4},
-    {date: '2022-07-15', count:4},
-    
-    {date: '2022-07-25', count:4},
-    {date: '2022-08-01', count:4},
-    {date: '2022-08-08', count:4},
-    {date: '2022-08-15', count:4},
-    {date: '2022-08-22', count:4},
-    {date: '2022-08-09', count:4},
-    {date: '2022-08-10', count:4},
-    {date: '2022-08-11', count:4},
-    {date: '2022-08-12', count:4},
-    {date: '2022-08-05', count:4},
-    {date: '2022-07-29', count:4},
-    {date: '2022-07-28', count:4},
-
-    {date: '2022-09-05', count:4},
-    {date: '2022-09-12', count:4},
-    {date: '2022-09-19', count:4},
-    {date: '2022-09-26', count:4},
-    {date: '2022-09-06', count:4},
-    {date: '2022-09-07', count:4},
-    {date: '2022-09-08', count:4},
-    {date: '2022-09-09', count:4},
-    {date: '2022-09-27', count:4},
-    {date: '2022-09-28', count:4},
-    {date: '2022-09-29', count:4},
-    {date: '2022-09-30', count:4},
-    {date: '2022-09-14', count:4},
-    {date: '2022-09-21', count:4},
-
-    {date: '2022-10-10', count:4},
-    {date: '2022-10-17', count:4},
-    {date: '2022-10-24', count:4},
-    {date: '2022-10-31', count:4},
-    {date: '2022-10-11', count:4},
-    {date: '2022-10-12', count:4},
-    {date: '2022-10-19', count:4},
-    {date: '2022-10-26', count:4},
-    {date: '2022-11-02', count:4},
-    {date: '2022-11-03', count:4},
-    {date: '2022-11-04', count:4},
-    {date: '2022-10-28', count:4},
-    {date: '2022-10-21', count:4},
-    {date: '2022-10-14', count:4},
-    
-    {date: '2022-11-14', count:4},
-    {date: '2022-11-15', count:4},
-    {date: '2022-11-16', count:4},
-    {date: '2022-11-17', count:4},
-    {date: '2022-11-18', count:4},
-    {date: '2022-11-24', count:4},
-    {date: '2022-11-30', count:4},
-    {date: '2022-12-08', count:4},
-    {date: '2022-12-16', count:4},
-    {date: '2022-12-15', count:4},
-    {date: '2022-12-14', count:4},
-    {date: '2022-12-13', count:4},
-    {date: '2022-12-12', count:4},
-    
-    {date: '2022-12-26', count:4},
-    {date: '2023-01-02', count:4},
-    {date: '2023-01-09', count:4},
-    {date: '2023-01-16', count:4},
-    {date: '2023-01-23', count:4},
-    {date: '2022-12-30', count:4},
-    {date: '2023-01-06', count:4},
-    {date: '2023-01-13', count:4},
-    {date: '2023-01-20', count:4},
-    {date: '2023-01-27', count:4},
-    {date: '2023-01-10', count:4},
-    {date: '2023-01-11', count:4},
-    {date: '2023-01-12', count:4},
-    
-]
+import NameList from './HeatMapData';
 
 function HeatMap(props){
     const x = useRef();
@@ -150,8 +55,18 @@ function HeatMap(props){
                     <CalendarHeatmap  startDate={getDate()} endDate={new Date(Date.now())} showWeekdayLabels values={NameList} classForValue={ReturnClass}/>            
                 </Stack>
             </Box>
-            <Stack direction={'row'} width={'100%'} justifyContent={'flex-end'} alignItems={'center'}>
-                
+            <Stack mt={2} spacing={0.75} direction={'row'} width={'100%'} justifyContent={'flex-end'} alignItems={'center'}>
+                <Typography fontSize={'14px'}>
+                    Less
+                </Typography>
+                <svg width="12" height="12"><rect width="12" height="12" fill={props.theme.palette.mode=="light"?"#ffffff":"#262c36"}></rect></svg>
+                <svg width="12" height="12"><rect width="12" height="12" fill="#fce4cb"></rect></svg>
+                <svg width="12" height="12"><rect width="12" height="12" fill="#f9c897"></rect></svg>
+                <svg width="12" height="12"><rect width="12" height="12" fill="#f6ad62"></rect></svg>
+                <svg width="12" height="12"><rect width="12" height="12" fill="#f3912e"></rect></svg>
+                <Typography fontSize={'14px'}>
+                    More
+                </Typography>
             </Stack>
         </Box>                
     )
