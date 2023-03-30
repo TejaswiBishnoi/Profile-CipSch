@@ -70,9 +70,21 @@ function ProfInfo(props){
         setStatus(!status);
     }
     const ref = useRef();
+    
     useLayoutEffect(()=>{
         setWidth(ref.current.clientWidth)
+    }, []);
+
+    useEffect(()=>{
+        function widthListener(){
+            setWidth(ref.current.clientWidth)            
+        }
+        window.addEventListener('resize', widthListener);
+        return ()=>{
+            window.removeEventListener('resize', widthListener);
+        }
     }, [])
+
     const [open1, setOpen1] = useState(false);
     const [open2, setOpen2] = useState(false);
     const [anchorEl1, setAnchorEl1] = useState(null);
