@@ -4,6 +4,7 @@ import AboutMe from "./MainComponenets/aboutme";
 import LinkComp from "./MainComponenets/LinkComp/LinkComp";
 import PassAndSec from "./MainComponenets/PassAndSec/passandsec";
 import Interests from "./MainComponenets/Interests/interests";
+import ProfInfo from "./MainComponenets/ProfessionalInfo/profinfo";
 
 function MainContainer(){
     const thm = useTheme();
@@ -14,9 +15,11 @@ function MainContainer(){
                 <Divider/>
                 <LinkComp theme={thm}/>
                 <Divider/>
-                <PassAndSec theme={thm}/>   
+                <ProfInfo theme={thm}/>
                 <Divider/>
-                <Interests theme={thm}/>             
+                <PassAndSec theme={thm}/>                   
+                <Divider/>
+                <Interests theme={thm}/>                            
             </Stack>
         </Box>
     )

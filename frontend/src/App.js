@@ -26,6 +26,10 @@ function App() {
             interest:{
                 main: 'rgba(243, 145, 46, 0.1)',
                 contrastText: '#f3912e'
+            },
+            select:{
+                contrastText: '#444a4a',
+                main: '#ffffff'
             }
         },
         typography:{
