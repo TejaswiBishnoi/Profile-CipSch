@@ -6,6 +6,7 @@ import dataContext from './components/datacontext';
 import Userbox from './components/userbox';
 import setdataContext from './components/setdatacontext';
 import MainContainer from './components/maincontainer';
+import NavBar from './components/NavBar/navbar';
 
 function App() {
     const theme = new createTheme({
@@ -60,6 +61,7 @@ function App() {
         headFont: '#2c3d4f',
         mainTextBack: "#ffffff",
         mainTextColor: "#464b4b",
+        headingColor: "#222831"
     }) ;
     
     const dataa = {
@@ -76,6 +78,7 @@ function App() {
                 <dataContext.Provider value={data}>
                     <setdataContext.Provider value={setData}>
                         <Stack overflow={'visible'} height={'100vh'} direction={'column'}>
+                            <NavBar/>
                             <Userbox/>
                             <MainContainer/>
                         </Stack>
