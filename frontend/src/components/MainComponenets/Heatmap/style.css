@@ -1,0 +1,23 @@
+.react-calendar-heatmap .color-empt-light{
+    fill: #ffffff;
+}
+
+.react-calendar-heatmap .color-empt-dark{
+    fill: #262c36;
+}
+
+.react-calendar-heatmap .color-value-1{
+    fill: #fce4cb;
+}
+
+.react-calendar-heatmap .color-value-2{
+    fill: #f9c897;
+}
+
+.react-calendar-heatmap .color-value-3{
+    fill: #f6ad62;
+}
+
+.react-calendar-heatmap .color-value-4{
+    fill: #f3912e;
+}

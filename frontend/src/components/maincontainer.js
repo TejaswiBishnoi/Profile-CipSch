@@ -5,13 +5,16 @@ import LinkComp from "./MainComponenets/LinkComp/LinkComp";
 import PassAndSec from "./MainComponenets/PassAndSec/passandsec";
 import Interests from "./MainComponenets/Interests/interests";
 import ProfInfo from "./MainComponenets/ProfessionalInfo/profinfo";
+import HeatMap from "./MainComponenets/Heatmap/HeatMap";
 
 function MainContainer(){
     const thm = useTheme();
     return(
         <Box sx={{display: 'flex', flexDirection:'column', height:'100%', overflow:'scroll'}} width={'100%'} bgcolor={thm.customMainContainer.background}>
-            <Stack direction={'column'} py={'30px'} px={'30px'} spacing={'30px'}>
+            <Stack direction={'column'} py={'30px'} px={'50px'} spacing={'30px'}>
                 <AboutMe theme={thm}/>
+                <Divider/>
+                <HeatMap theme={thm}/>
                 <Divider/>
                 <LinkComp theme={thm}/>
                 <Divider/>
