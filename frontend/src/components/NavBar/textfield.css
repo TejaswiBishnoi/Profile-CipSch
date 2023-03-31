@@ -1,16 +1,12 @@
-.AboutMainField fieldset {
+.TextField-without-border-radius fieldset {
   border: 0;
   padding: 0px;
 }
-.AboutMainField textarea{
+.TextField-without-border-radius input{
     padding-left: 0;
     padding-right: 0;
     padding-top: 0;
     padding-bottom: 0;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
-}
-
-.Light-Text textarea{
-  color: #444a4a;
 }

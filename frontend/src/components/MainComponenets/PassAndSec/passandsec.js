@@ -20,7 +20,7 @@ function PassAndSec(props){
             </Stack>
             <Typography mt={1} fontSize={'15px'} align="left" fontWeight={550} ml={0.5} mb={0.5} color={props.theme.headFont}>Password</Typography>
             <Box width={'100%'} sx={{borderRadius: '8px', overflow: 'hidden'}}>
-                <div className="AboutMainField" style={{width: '100%', backgroundColor: props.theme.mainTextBack, paddingLeft: '10px'}}>
+                <div className="AboutMainField Light-Text" style={{width: '100%', backgroundColor: props.theme.mainTextBack, paddingLeft: '10px'}}>
                     <TextField sx={{width: '100%', color:props.theme.mainTextColor}} type="password" value={'abcdefghijklmnopqr'} onChange={(e)=>{props.setAbout(e.target.value)}} variant="outlined" inputProps={{readOnly: true}}/>
                 </div>
             </Box>

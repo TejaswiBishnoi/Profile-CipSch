@@ -56,7 +56,7 @@ function HeatMap(props){
                 </Stack>
             </Box>
             <Stack mt={2} spacing={0.75} direction={'row'} width={'100%'} justifyContent={'flex-end'} alignItems={'center'}>
-                <Typography fontSize={'14px'}>
+                <Typography color={props.theme.headingColor} fontSize={'14px'}>
                     Less
                 </Typography>
                 <svg width="12" height="12"><rect width="12" height="12" fill={props.theme.palette.mode=="light"?"#ffffff":"#262c36"}></rect></svg>
@@ -64,7 +64,7 @@ function HeatMap(props){
                 <svg width="12" height="12"><rect width="12" height="12" fill="#f9c897"></rect></svg>
                 <svg width="12" height="12"><rect width="12" height="12" fill="#f6ad62"></rect></svg>
                 <svg width="12" height="12"><rect width="12" height="12" fill="#f3912e"></rect></svg>
-                <Typography fontSize={'14px'}>
+                <Typography color={props.theme.headingColor} fontSize={'14px'}>
                     More
                 </Typography>
             </Stack>

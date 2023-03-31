@@ -72,7 +72,7 @@ function Interests(props){
                     }
                 })}
             </Stack>
-            <InterestModal open={open} setOpen = {setOpen} setData={setData} data={data} Mapping={Mapping}/>
+            <InterestModal theme={props.theme} open={open} setOpen = {setOpen} setData={setData} data={data} Mapping={Mapping}/>
         </Box>
     );
 }

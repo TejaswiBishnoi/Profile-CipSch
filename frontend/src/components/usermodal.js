@@ -28,7 +28,7 @@ function UserModal(props){
     }
     return(
         <Modal open={props.open} onClose={()=>{props.handleClose(); setTbdata({...data})}}>
-            <Paper style={style} elevation={10}>
+            <Paper style={style} sx={{background: thm.mainTextBack}} elevation={10}>
                 <Box paddingX={1.5} paddingY={2} paddingBottom={3}>
                     <Stack direction={'row'} justifyContent={'space-between'}>
                         <Typography fontSize={'18px'} fontWeight={'700'}>Profile Update</Typography>

@@ -45,7 +45,7 @@ function InterestModal(props){
     const Mapping =[];
     return(
         <Modal open={props.open} onClose={handleClose}>
-            <Paper style={style} elevation={10} sx={{ paddingY:5, paddingTop: 4}}>
+            <Paper style={style} elevation={10} sx={{ paddingY:5, paddingTop: 4, background: props.theme.mainTextBack}}>
                 <Box paddingX={1.5} mx={3}>
                     <Grid spacing={2} width={'100%'} container>
                         {props.Mapping.map((dt)=>{

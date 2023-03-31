@@ -18,7 +18,7 @@ function ModalField(props){
                 <Button color="orange" onClick={()=>{setPass(!pass)}} sx={{height: '30px', minWidth: '30px', width: '30px', padding: 0, mr: 1}} disableRipple variant="text">
                     <EyeSVG/>
                 </Button>
-                <div style={{width: '100%', paddingLeft: 8}} className="AboutMainField">
+                <div style={{width: '100%', paddingLeft: 8}} className="AboutMainField Light-Text">
                     <TextField onChange={(e)=>{props.setValue(e.target.value)}} placeholder={props.placeholder} value={props.value} type={pass?"password":""} sx={{width: "100%"}} variant="outlined"/>
                 </div>
             </Stack>

@@ -14,8 +14,8 @@ function Userbox(props){
 
     return(
         <div>
-            <Box height={110} width={'100%'} borderBottom={'1px solid lightgray'} sx={{backgroundImage: 'linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,1) 100%), url(https://www.cipherschools.com/static/media/ProfileCover.e525f2d51356332792cb.png);', backgroundPositionX:'50%', backgroundPositionY:'center', backgroundSize:'cover',backgroundRepeat: 'no-repeat'}}>
-                <Stack direction={'row'} justifyContent={'space-between'} paddingX={'30px'} paddingY={'0px'}>
+            <Box height={110} width={'100%'} borderBottom={'1px solid lightgray'} sx={{backgroundImage: 'linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,1) 100%), url(https://www.cipherschools.com/static/media/ProfileCover.e525f2d51356332792cb.png);', backgroundColor: '#ffffff', backgroundPositionX:'50%', backgroundPositionY:'center', backgroundSize:'cover',backgroundRepeat: 'no-repeat', filter: thm.palette.mode=='dark'?'invert(100%)':''}}>
+                <Stack sx={{ backgroundImage: '', filter: thm.palette.mode=='dark'?'invert(100%)':''}} direction={'row'} justifyContent={'space-between'} paddingX={'30px'} paddingY={'0px'}>
                     <Stack direction={'row'} justifyContent={'flex-start'} spacing={4}>
                         <Box height={'70px'} display={'flex'} flexDirection={'column'} my={'auto'}>
                             <Stack direction={'column'} justifyContent={'center'}>

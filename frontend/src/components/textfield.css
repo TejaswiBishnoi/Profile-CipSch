@@ -10,3 +10,11 @@
     font-size: 14px;
     font-weight: 500;
 }
+
+.light-Text input{
+  color: #444a4a;
+}
+
+.dark-Text input{
+  color: rgba(255, 255, 255, 0.85)
+}
