@@ -32,7 +32,7 @@ function ChangeModal(props){
     }
     return(
         <Modal open={props.open} onClose={handleClose}>
-            <Paper style={style} elevation={10} sx={{ paddingY:5, paddingTop: 4}}>
+            <Paper style={style} elevation={10} sx={{ paddingY:5, paddingTop: 4, background: props.theme.mainTextBack}}>
                 <Box paddingX={1.5} mx={3}>
                     <Stack direction={'column'} spacing={2}>
                         <Typography fontSize={'14px'} color={props.theme.palette.orange.main} display={conf?'none':'contents'}>Password and Confirm Password not matched!</Typography>

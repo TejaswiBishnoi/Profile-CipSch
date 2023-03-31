@@ -74,8 +74,8 @@ function App() {
                 contrastText: '#ffffff'
             },
             dark:{
-                main: 'rgba(8,15,15,.85)',
-                contrastText: '#ffffff'
+                main: 'rgba(255, 255, 255, 0.85)',
+                contrastText: 'rgb(0, 0, 0)'
             },
             unselect:{
                 main: '#15181e',
@@ -86,8 +86,8 @@ function App() {
                 contrastText: '#f3912e'
             },
             select:{
-                contrastText: '#444a4a',
-                main: '#ffffff'
+                contrastText: 'rgba(255, 255, 255, 0.75)',
+                main: '#262c36'
             }
         },
         typography:{

@@ -11,6 +11,10 @@
     font-weight: 500;
 }
 
-.Light-Text textarea{
-  color: #444a4a;
+.light-Text textarea{
+  color: rgba(8, 15, 15, 0.75);
+}
+
+.dark-Text textarea{
+  color: rgba(255, 255, 255, 0.75);
 }

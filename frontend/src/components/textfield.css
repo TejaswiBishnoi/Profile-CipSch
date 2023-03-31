@@ -1,8 +1,8 @@
-.TextField-without-border-radius fieldset {
+.TextField-without-border-radii fieldset {
   border: 0;
   padding: 0px;
 }
-.TextField-without-border-radius input{
+.TextField-without-border-radii input{
     padding-left: 14px;
     padding-right: 14px;
     padding-top: 8px;
