@@ -110,7 +110,7 @@ function ProfInfo(props){
     return (
         <Box width={'100%'}>
             <Stack mb={1} alignItems={'center'} width={'100%'} direction={'row'} justifyContent={'space-between'}>
-                <Typography color={props.theme.headFont} textTransform={'uppercase'} fontSize={'16px'} fontWeight={'700'}>
+                <Typography align="left" color={props.theme.headFont} textTransform={'uppercase'} fontSize={'16px'} fontWeight={'700'}>
                     Professional Information
                 </Typography>
                 <Button onClick={handleChange} variant="contained" color="orange" sx={{width: '80px', borderRadius: '5px', height: '28px'}} disableElevation disableTouchRipple>
@@ -120,7 +120,7 @@ function ProfInfo(props){
                 </Button>                
             </Stack>
             <Grid direction={'row'} width={'100%'} spacing={5} container>
-                <Grid xs={6} item>
+                <Grid xs={12} md={6} item>
                     <Typography align="left" mb={1} fontSize={'15px'} color={props.theme.headFont} fontWeight={'510'}>
                         Highest education
                     </Typography>
@@ -136,7 +136,7 @@ function ProfInfo(props){
                     </Button>
                     <PopOver pid={0} setId={setId} id={id} Mapping={EMapping} open={open1} width={width} handleClose={handleClose1} anchorEl={anchorEl1}/>
                 </Grid>
-                <Grid xs={6} item>
+                <Grid xs={12} md={6} item>
                     <Typography mb={1} align="left" fontSize={'15px'} color={props.theme.headFont} fontWeight={'510'}>
                         What do you do currently?
                     </Typography>

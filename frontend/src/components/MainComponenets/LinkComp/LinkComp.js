@@ -68,27 +68,27 @@ function LinkComp(props){
                 <LinkEditButton status={status} setStatus={setStatus} content={status?"Edit":"Save"}/>                
             </Stack>
             <Grid mt={0} container rowSpacing={3} columnSpacing={4}>               
-                <Grid item xs={6} lg={6} xl={4}>
+                <Grid item xs={12} lg={6} xl={4}>
                     <Typography fontSize={'15px'} align="left" fontWeight={550} ml={0.5} mb={0.5} color={props.theme.headFont}>LinkedIn</Typography>
                     <LinkText data={data} setData={setData} datakey="linkedin" svg={<LinkedInSVG/>} theme={props.theme} placeholder="LinkedIn" readonly={status}/>
                 </Grid>
-                <Grid item xs={6} lg={6} xl={4}>
+                <Grid item xs={12} lg={6} xl={4}>
                     <Typography fontSize={'15px'} align="left" fontWeight={550} ml={0.5} mb={0.5} color={props.theme.headFont}>Github</Typography>                    
                     <LinkText data={data} setData={setData} datakey="github" svg={<GithubSVG/>} theme={props.theme} placeholder="Github" readonly={status}/>
                 </Grid>
-                <Grid item xs={6} lg={6} xl={4}>
+                <Grid item xs={12} lg={6} xl={4}>
                     <Typography fontSize={'15px'} align="left" fontWeight={550} ml={0.5} mb={0.5} color={props.theme.headFont}>Facebook</Typography>
                     <LinkText data={data} setData={setData} datakey="facebook" svg={<FacebookSVG/>} theme={props.theme} placeholder="Facebook" readonly={status}/>
                 </Grid>
-                <Grid item xs={6} lg={6} xl={4}>
+                <Grid item xs={12} lg={6} xl={4}>
                     <Typography fontSize={'15px'} align="left" fontWeight={550} ml={0.5} mb={0.5} color={props.theme.headFont}>Twitter</Typography>
                     <LinkText data={data} setData={setData} datakey="twitter" svg={<TwitterSVG/>} theme={props.theme} placeholder="Twitter" readonly={status}/>
                 </Grid>
-                <Grid item xs={6} lg={6} xl={4}>
+                <Grid item xs={12} lg={6} xl={4}>
                     <Typography fontSize={'15px'} align="left" fontWeight={550} ml={0.5} mb={0.5} color={props.theme.headFont}>Instagram</Typography>
                     <LinkText data={data} setData={setData} datakey="instagram" svg={<InstaSVG/>} theme={props.theme} placeholder="Instagram" readonly={status}/>
                 </Grid>
-                <Grid item xs={6} lg={6} xl={4}>
+                <Grid item xs={12} lg={6} xl={4}>
                     <Typography fontSize={'15px'} align="left" fontWeight={550} ml={0.5} mb={0.5} color={props.theme.headFont}>Your Website</Typography>
                     <LinkText data={data} setData={data} datakey="website" svg={<YourWebSVG/>} theme={props.theme} placeholder="Your Website" readonly={status}/>
                 </Grid>

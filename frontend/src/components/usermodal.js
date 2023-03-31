@@ -11,6 +11,7 @@ const style = {
     left: '50%',
     transform: 'translate(-50%, -50%)',
     width: 700,
+    maxWidth: '90%',
     //border: '2px solid #000',
     borderRadius: '20px'
 }
@@ -35,7 +36,7 @@ function UserModal(props){
                         <div onClick={()=>{props.handleClose(); setTbdata({...data})}}><Typography><CloseIcon></CloseIcon></Typography></div>
                     </Stack>
                     <Grid container marginTop={5}>
-                        <Grid md={4} item>
+                        <Grid md={4} xs={12} item>
                             <Stack spacing={2} height={'100%'} direction={'column'} alignItems={'center'} justifyContent={'center'}>
                                 <Avatar sx={{height:'150px', width:'150px', bgcolor:'red', mx:'auto'}} src="/broken-image.jpg">
                                     T
@@ -45,7 +46,7 @@ function UserModal(props){
                                 </Box>
                             </Stack>
                         </Grid>
-                        <Grid md={8} item>
+                        <Grid md={8} xs={12} item>
                             <Stack spacing={2} direction={'column'} marginY={'auto'} height={'100%'} marginX={1}>
                                 <Box>
                                     <Typography fontSize={'15px'} fontFamily={'sans-serif'} color={thm.customTextField.labelcolor}>First Name</Typography>

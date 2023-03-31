@@ -11,7 +11,7 @@ function MainContainer(){
     const thm = useTheme();
     return(
         <Box sx={{display: 'flex', flexDirection:'column', height:'100%', overflow:'scroll'}} width={'100%'} bgcolor={thm.customMainContainer.background}>
-            <Stack direction={'column'} py={'30px'} px={'50px'} spacing={'30px'}>
+            <Stack direction={'column'} py={'30px'} px={{xs:'20px', md:'50px'}} spacing={'30px'}>
                 <AboutMe theme={thm}/>
                 <Divider/>
                 <HeatMap theme={thm}/>
