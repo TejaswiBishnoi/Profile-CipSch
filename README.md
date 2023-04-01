@@ -61,4 +61,8 @@ If all the steps were followed properly, the website is now accesible on</br> <c
   <li><b>api</b>: It contains the logic implemented by the API endpoints in form of code. Each file in this folder is a logic for API endpoint.</li>
   <li><b>avatars</b>: Stores the avatars/profile pictures of the users.</li>
 </ol>
-    
+<h3>Contents of frontend folder:</h3>
+<ol>
+  <li><b>package.json and package-lock.json</b>: Contains the configuration of the app, including Node.js/npm settings and package dependencies.</li>
+  <li><b>public</b>: It contains the html, css and icon files that serve as the base for the react SPA web-app.</li>
+  <li><b>src</b>: It contains all the componenets, base JS files and other stuff, that is required to run the react app. The src contains a Componenets folder, which contaisn all the custom components I have designed for this application.
