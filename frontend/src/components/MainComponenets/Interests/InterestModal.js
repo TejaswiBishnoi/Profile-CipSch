@@ -1,5 +1,6 @@
 import { Box, Button, Grid, Modal, Paper, Stack, Typography } from "@mui/material";
-import { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const style = {
     position: 'absolute',
@@ -34,14 +35,23 @@ function InterestButton(props){
 
 function InterestModal(props){
     const [inter, setInter] = useState(props.data)
-    const interx = "";
+    useEffect(()=>{
+        console.log('Data Set');
+        setInter(props.data)
+    }, [props.data])
     function handleClose(){
         props.setOpen(false);
         setInter(props.data);        
     }
     function handleSave(){
-        props.setData(inter);
-        props.setOpen(false);
+        axios.post('http://localhost:5000/api/updateprofinfo', {interests: inter}, {headers: {token: localStorage.getItem('token')}}).then(res=>{
+            if (res.status == 200){
+                props.setData(inter);
+                props.setOpen(false);
+            }
+        }).catch(e=>{
+            alert(e.response.data);
+        })        
     }
     const Mapping =[];
     return(

@@ -1,5 +1,6 @@
 var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://localhost:27017/";
+const bcrypt = require('bcrypt')
 
 async function updatePass(req, res){
     if (!req.body.email || !req.body.pword){

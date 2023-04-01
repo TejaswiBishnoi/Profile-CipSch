@@ -5,6 +5,18 @@ import EditIcon from '@mui/icons-material/Edit';
 import UserModal from "./usermodal";
 import { useTheme } from "@emotion/react";
 
+function AvtObj(props){
+    if (props.data == {}){
+        return (<>T</>)
+    }
+    if (props.data.profpic == ""){
+        return (<>{props.data.fname[0]}</>)
+    }
+    return(
+        <img style={{height:'70px', width:'70px', background: props.thm.mainTextBack}} src={"http://localhost:5000/"+props.data.profpic}/>
+    )
+}
+
 function Userbox(props){
     const data = useContext(dataContext)
     const [modalOpen, setModalOpen] = useState(false);
@@ -20,7 +32,8 @@ function Userbox(props){
                         <Box height={'70px'} display={'flex'} flexDirection={'column'} my={'auto'}>
                             <Stack direction={'column'} justifyContent={'center'}>
                                 <Avatar sx={{height:'70px', width:'70px', bgcolor:'red'}} src="/broken-image.jpg">
-                                    T
+                                    {/* <img style={{height:'70px', width:'70px', background: thm.mainTextBack}} src="http://localhost:5000/1679781589696-tejaswi@example.com.png"/> */}
+                                    <AvtObj data={data} thm={thm}/>
                                 </Avatar>
                                 
                             </Stack>

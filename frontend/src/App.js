@@ -24,6 +24,15 @@ function ElementAuth(){
     )
 }
 
+function ElementSign(){
+    return(
+        <>
+            <SignupModal/>
+            <WrappedContainer/>
+        </>
+    )
+}
+
 function App() {
     const theme = new createTheme({
         palette:{
@@ -133,14 +142,7 @@ function App() {
         mainTextBack: "#262c36",
         mainTextColor: "#464b4b",
         headingColor: "#eeeeee"
-    })
-    const dataa = {
-        fname: "Tejaswi",
-        lname: "Tejaswi",
-        email: 'tejaswi@example.com',
-        followers: 0,
-        mobile: '9991233051'
-    }
+    })    
     const [data, setData] = useState({})
     return (
         <div className="App">
@@ -151,7 +153,8 @@ function App() {
                     <setdarkContext.Provider value={setLmode}>
                         <Routes>
                             <Route path='/' element={<WrappedContainer login/>}/>
-                            <Route path='/auth' element={<ElementAuth/>}/>                                
+                            <Route path='/auth' element={<ElementAuth/>}/>
+                            <Route path='/auth/signup' element={<ElementSign/>}/>                              
                         </Routes>                        
                     </setdarkContext.Provider>
                     </setdataContext.Provider>

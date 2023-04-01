@@ -1,6 +1,8 @@
 import { Box, Button, Grid, Stack, Typography } from "@mui/material";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import PopOver from "./popovers";
+import { useLocation } from "react-router-dom";
+import axios from "axios";
 
 function FlipSVG(){
     return(
@@ -58,14 +60,16 @@ const PMapping = [
 
 function ProfInfo(props){
     const [status, setStatus] = useState(true);
-    const [highedu, setHighedu] = useState(0);
-    const [profession, setProfession] = useState(0);
     const [id, setId] = useState([0, 0]);
     const [width, setWidth] = useState(0);
+    const loc = useLocation();
     function handleChange(){
         if (!status){
-            setOpen1(false);
-            setOpen2(false);
+            axios.post('http://localhost:5000/api/updateprofinfo', {highedu: id[0], profession: id[1]}, {headers: {token: localStorage.getItem('token')}}).then(resp=>{
+                if (resp.status == 200) setStatus(!status);
+            }).catch(e=>{
+                alert(e.response.data);
+            })
         }
         setStatus(!status);
     }
@@ -84,6 +88,20 @@ function ProfInfo(props){
             window.removeEventListener('resize', widthListener);
         }
     }, [])
+    useEffect(()=>{
+        console.log('Get Prof Info');
+        if (loc.pathname!='/') return;
+        axios.get('http://localhost:5000/api/getprofinfo', {headers: {token: localStorage.getItem('token')}}).then(res=>{
+            if (res.status == 200){
+                var arr = [3, 3];
+                if (res.data.highedu != null) arr[0] =  res.data.highedu;
+                if (res.data.profession != null) arr[1] =  res.data.profession;
+                setId(arr);
+            }
+        }).catch(e=>{
+            alert(e.response.data);
+        })
+    }, [loc])
 
     const [open1, setOpen1] = useState(false);
     const [open2, setOpen2] = useState(false);

@@ -8,6 +8,7 @@ const authMiddleware = require('./api/authmiddleware').authMiddleware;
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.static('avatars'))
 
 app.post('/api/register', (req, res)=>{console.log('register'); require('./api/register').register(req,res);});
 

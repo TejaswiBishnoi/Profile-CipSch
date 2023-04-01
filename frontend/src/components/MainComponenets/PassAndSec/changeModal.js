@@ -2,6 +2,7 @@ import { Box, Modal, Paper, Stack, Typography, Button, Backdrop } from "@mui/mat
 import { useState } from "react";
 import ModalField from "./modalfield";
 import './modalfield.css'
+import axios from "axios";
 
 const style = {
     position: 'absolute',
@@ -19,10 +20,12 @@ function ChangeModal(props){
     const [newp, setNewp] = useState('');
     const [cnewp, setCnewp] = useState('');
     const [conf, setConf] = useState(true);
+    const [err, setErr] = useState('');
     function handleClose(){
         setCurrp('');
         setNewp('');
         setCnewp('');
+        setErr('');
         props.setOpen(false);
     }
     function handleSave(){
@@ -31,6 +34,17 @@ function ChangeModal(props){
             return;
         }
         setConf(true);
+        setErr('');
+        const data = {
+            email: localStorage.getItem('email'),
+            pword: currp,
+            newpword: newp
+        }
+        axios.post('http://localhost:5000/api/changepass', data).then((resp)=>{
+            if (resp.status==200) handleClose();
+        }).catch(e=>{
+            setErr(e.response.data);
+        })
     }
     return(
         <Modal open={props.open} onClose={handleClose}>
@@ -38,6 +52,7 @@ function ChangeModal(props){
                 <Box paddingX={1.5} mx={3}>
                     <Stack direction={'column'} spacing={2}>
                         <Typography fontSize={'14px'} color={props.theme.palette.orange.main} display={conf?'none':'contents'}>Password and Confirm Password not matched!</Typography>
+                        <Typography fontSize={'14px'} color={props.theme.palette.orange.main} display={err==""?'none':''}>{err}</Typography>
                         <Box>
                             <Typography color={props.theme.headFont} fontSize={'14px'} fontWeight={500}>
                                 Current Password

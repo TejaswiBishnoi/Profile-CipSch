@@ -17,7 +17,7 @@ async function updatePicture(req, res){
             return;
         }
         else{
-            res.status(200).send('Picture Updated Successfully');
+            res.status(200).send(req.file.filename);
         }
     }catch(e){
         console.log(e);

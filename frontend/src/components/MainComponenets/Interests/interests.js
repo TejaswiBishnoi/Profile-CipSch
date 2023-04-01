@@ -1,6 +1,8 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import InterestModal from "./InterestModal";
+import { useLocation } from "react-router-dom";
+import axios from "axios";
 
 const Mapping = [
     {
@@ -51,6 +53,18 @@ function InterestButton(props){
 function Interests(props){
     const [open, setOpen] = useState(false);
     const [data, setData] = useState("");
+    const loc = useLocation();
+    useEffect(()=>{
+        if (loc.pathname != '/') return;
+        axios.get('http://localhost:5000/api/getprofinfo', {headers: {token: localStorage.getItem('token')}}).then(res=>{
+            if (res.status == 200){
+                if (!res.data.interests) setData("");
+                else setData(res.data.interests);
+            }
+        }).catch(e=>{
+            alert(e.response.data);
+        })
+    }, [loc])
     return(
         <Box width={'100%'}>
             <Stack width={'100%'} direction={'row'} justifyContent={'space-between'} alignItems={'center'}>

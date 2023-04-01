@@ -1,7 +1,9 @@
 import { Box, Grid, Stack, Typography } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import LinkText from "./linktext";
 import LinkEditButton from "./linkeditbutton";
+import { useLocation } from "react-router-dom";
+import axios from "axios";
 
 function GithubSVG(){
     return(
@@ -49,23 +51,36 @@ function YourWebSVG(){
 
 function LinkComp(props){
     const [status, setStatus] = useState(true);
+    const loc = useLocation();
     const oldData={
         "linkedin": "",
-        "github": "TejaswiBishnoi",
+        "github": "",
         "facebook": "",
         "twitter": "",
         "instagram": "",
         "website": ""
     }
     const [data, setData] = useState(oldData);
-    
+    useEffect(()=>{
+        console.log('Get Links')
+        if (loc.pathname == '/'){
+            axios.get('http://localhost:5000/api/getwebprofiles', {headers: {token: localStorage.getItem('token')}}).then(res=>{
+                if (res.status == 200){
+                    setData(res.data);
+                }
+            }).catch(e=>{
+                alert(e.response.data)
+            })
+        }        
+    }, [loc])
+
     return(
         <Box width={'100%'}>
             <Stack alignItems={'center'} width={'100%'} direction={'row'} justifyContent={'space-between'}>
                 <Typography color={props.theme.headFont} fontSize={'16px'} fontWeight={'700'}>
                     ON THE WEB
                 </Typography>
-                <LinkEditButton status={status} setStatus={setStatus} content={status?"Edit":"Save"}/>                
+                <LinkEditButton data={data} status={status} setStatus={setStatus} content={status?"Edit":"Save"}/>                
             </Stack>
             <Grid mt={0} container rowSpacing={3} columnSpacing={4}>               
                 <Grid item xs={12} lg={6} xl={4}>

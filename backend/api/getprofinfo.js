@@ -14,7 +14,7 @@ async function getProfInfo(req, res){
     try{
         let userdata = await col.findOne({email: req.user}, {projection:{_id: 0, email: 0}});
         if (!userdata){
-            res.status(500).send('Server Error!');
+            res.status(200).send({});
             return;
         }
         // const resdata = {
