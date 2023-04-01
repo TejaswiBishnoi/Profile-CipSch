@@ -1,6 +1,7 @@
-import { Box, Modal, Paper, Stack, Typography, Button } from "@mui/material";
+import { Box, Modal, Paper, Stack, Typography, Button, Backdrop } from "@mui/material";
 import { useState } from "react";
 import ModalField from "./modalfield";
+import './modalfield.css'
 
 const style = {
     position: 'absolute',

@@ -1,8 +1,8 @@
-.AboutMainField fieldset {
+.LoginField fieldset {
   border: 0;
   padding: 0px;
 }
-.AboutMainField input{
+.LoginField input{
     padding-left: 8px;
     padding-right: 14px;
     padding-top: 11px;
@@ -11,13 +11,9 @@
     font-weight: 500;
 }
 
-.light-Text input{
+.light-text input{
   color: rgba(8, 15, 15, 0.85);
 }
-.dark-Text input{
+.dark-text input{
   color:rgba(255, 255, 255, 0.85)
 }
-
-/* .MuiBackdrop-root.MuiModal-backdrop{
-  backdrop-filter: blur(3px);
-} */

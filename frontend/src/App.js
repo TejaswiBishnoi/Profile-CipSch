@@ -9,6 +9,20 @@ import setdataContext from './components/setdatacontext';
 import setdarkContext from './components/setdarkcontext';
 import MainContainer from './components/maincontainer';
 import NavBar from './components/NavBar/navbar';
+import { Login } from '@mui/icons-material';
+import LoginModal from './components/LoginRegister/LoginModal';
+import SignupModal from './components/LoginRegister/SignupModal';
+import WrappedContainer from './components/wrappedContainer';
+import { Route, Routes } from 'react-router-dom';
+
+function ElementAuth(){
+    return(
+        <>
+            <LoginModal/>
+            <WrappedContainer/>
+        </>
+    )
+}
 
 function App() {
     const theme = new createTheme({
@@ -127,7 +141,7 @@ function App() {
         followers: 0,
         mobile: '9991233051'
     }
-    const [data, setData] = useState(dataa)
+    const [data, setData] = useState({})
     return (
         <div className="App">
             <ThemeProvider theme={lmode?theme:darkTheme}>
@@ -135,11 +149,10 @@ function App() {
                 <darkContext.Provider value={lmode}>
                     <setdataContext.Provider value={setData}>
                     <setdarkContext.Provider value={setLmode}>
-                        <Stack overflow={'visible'} height={'100vh'} direction={'column'}>
-                            <NavBar/>
-                            <Userbox/>
-                            <MainContainer/>
-                        </Stack>
+                        <Routes>
+                            <Route path='/' element={<WrappedContainer login/>}/>
+                            <Route path='/auth' element={<ElementAuth/>}/>                                
+                        </Routes>                        
                     </setdarkContext.Provider>
                     </setdataContext.Provider>
                 </darkContext.Provider>

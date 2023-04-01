@@ -1,15 +1,20 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import dataContext from "../datacontext";
 import setdataContext from "../setdatacontext";
 import { Box, Stack, Typography } from "@mui/material";
 import EditButton from "./editbutton";
 import AboutField from "./aboutfield";
+import { useFetcher } from "react-router-dom";
 
 function AboutMe(props){
     const data = useContext(dataContext);
     const setData = useContext(setdataContext);
     const [about, setAbout] = useState(data.about);
     const [status, setStatus] = useState(true)
+    useEffect(()=>{
+        console.log('err')
+        setAbout(data.about);
+    }, [data])
 
     return(
         <Box width={'100%'}>

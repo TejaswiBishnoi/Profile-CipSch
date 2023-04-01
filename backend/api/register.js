@@ -4,7 +4,7 @@ var url = "mongodb://localhost:27017/";
 
 async function register(req, res){
     if (!req.body.fname || !req.body.lname || !req.body.email || !req.body.lname|| !req.body.pword){
-        res.status(400).send('Bad Request');
+        res.status(400).send('Please provide all the necessary info');
         return;
     }
     var email = ""
