@@ -4,16 +4,13 @@ import { Stack, ThemeProvider, createTheme, useTheme } from '@mui/material';
 import { createContext, useState } from 'react';
 import dataContext from './components/datacontext';
 import darkContext from './components/darkcontext';
-import Userbox from './components/userbox';
 import setdataContext from './components/setdatacontext';
 import setdarkContext from './components/setdarkcontext';
-import MainContainer from './components/maincontainer';
-import NavBar from './components/NavBar/navbar';
-import { Login } from '@mui/icons-material';
 import LoginModal from './components/LoginRegister/LoginModal';
 import SignupModal from './components/LoginRegister/SignupModal';
 import WrappedContainer from './components/wrappedContainer';
 import { Route, Routes } from 'react-router-dom';
+import FWrapper from './components/Followers/wrapper';
 
 function ElementAuth(){
     return(
@@ -154,7 +151,8 @@ function App() {
                         <Routes>
                             <Route path='/' element={<WrappedContainer login/>}/>
                             <Route path='/auth' element={<ElementAuth/>}/>
-                            <Route path='/auth/signup' element={<ElementSign/>}/>                              
+                            <Route path='/auth/signup' element={<ElementSign/>}/>
+                            <Route path='/followers' element={<FWrapper/>}/>                              
                         </Routes>                        
                     </setdarkContext.Provider>
                     </setdataContext.Provider>

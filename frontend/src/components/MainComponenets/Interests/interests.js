@@ -55,7 +55,7 @@ function Interests(props){
     const [data, setData] = useState("");
     const loc = useLocation();
     useEffect(()=>{
-        if (loc.pathname != '/') return;
+        if (loc.pathname != '/' || localStorage.getItem('token')==null) return;
         axios.get('http://localhost:5000/api/getprofinfo', {headers: {token: localStorage.getItem('token')}}).then(res=>{
             if (res.status == 200){
                 if (!res.data.interests) setData("");

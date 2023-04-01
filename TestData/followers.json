@@ -1,0 +1,91 @@
+[{
+  "_id": {
+    "$oid": "64200d04f3709c9cf903dd1e"
+  },
+  "follower": "tejaswi@some.mail",
+  "following": "tejaswi@example.com"
+},{
+  "_id": {
+    "$oid": "642862d71d0db0aba4df2c60"
+  },
+  "follower": "example1@example.cip",
+  "following": "example@example.cip"
+},{
+  "_id": {
+    "$oid": "642864dea8f978dcea84b87a"
+  },
+  "follower": "example2@example.cip",
+  "following": "example@example.cip"
+},{
+  "_id": {
+    "$oid": "642864dea8f978dcea84b87b"
+  },
+  "follower": "example3@example.cip",
+  "following": "example@example.cip"
+},{
+  "_id": {
+    "$oid": "642864dea8f978dcea84b87c"
+  },
+  "follower": "example4@example.cip",
+  "following": "example@example.cip"
+},{
+  "_id": {
+    "$oid": "642864dea8f978dcea84b87d"
+  },
+  "follower": "example5@example.cip",
+  "following": "example@example.cip"
+},{
+  "_id": {
+    "$oid": "642864dea8f978dcea84b87e"
+  },
+  "follower": "example6@example.cip",
+  "following": "example@example.cip"
+},{
+  "_id": {
+    "$oid": "642864dea8f978dcea84b87f"
+  },
+  "follower": "example7@example.cip",
+  "following": "example@example.cip"
+},{
+  "_id": {
+    "$oid": "642864dea8f978dcea84b880"
+  },
+  "follower": "example8@example.cip",
+  "following": "example@example.cip"
+},{
+  "_id": {
+    "$oid": "642864dea8f978dcea84b881"
+  },
+  "follower": "example9@example.cip",
+  "following": "example@example.cip"
+},{
+  "_id": {
+    "$oid": "642864dea8f978dcea84b882"
+  },
+  "follower": "example10@example.cip",
+  "following": "example@example.cip"
+},{
+  "_id": {
+    "$oid": "642864dea8f978dcea84b883"
+  },
+  "follower": "example11@example.cip",
+  "following": "example@example.cip"
+},{
+  "_id": {
+    "$oid": "642864dea8f978dcea84b884"
+  },
+  "follower": "example12@example.cip",
+  "following": "example@example.cip"
+},{
+  "_id": {
+    "$oid": "64286828c48c42d593486cd6"
+  },
+  "follower": "example13@example.cip",
+  "following": "example@example.cip"
+},{
+  "_id": {
+    "$oid": "64286828c48c42d593486cd7"
+  },
+  "follower": "example14@example.cip",
+  "following": "example@example.cip"
+}]

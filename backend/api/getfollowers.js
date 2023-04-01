@@ -13,7 +13,7 @@ async function getFollowers(req, res){
     let offset, limit;
     
     if (req.query.limit) limit = req.query.limit;
-    else limit = 14;
+    else limit = 12;
 
     if (req.query.page) offset = (req.query.page - 1)*limit;
     else offset = 0;
@@ -27,9 +27,11 @@ async function getFollowers(req, res){
         //console.log(initdata)
         const resdata = []
         for (var i = 0; i < initdata.length; i++){
-            let userdata = await db.collection('users').findOne({email: initdata[i].follower}, {projection: {fname: 1, lname: 1, _id: 0}});
+            let userdata = await db.collection('users').findOne({email: initdata[i].follower}, {projection: {fname: 1, lname: 1, profpic: 1, followers: 1, _id: 0}});
+            if(!userdata) console.log(i);
             let userdata2 = await db.collection('profinfo').findOne({email: initdata[i].follower}, {projection: {profession: 1}});
-            userdata.profession = userdata2.profession;
+            if(userdata2!=null)userdata.profession = userdata2.profession;
+            else userdata.profession = (i%5).toString();
             //console.log(userdata);
             resdata.push(userdata);
         }

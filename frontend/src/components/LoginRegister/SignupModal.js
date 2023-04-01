@@ -39,7 +39,10 @@ function SignupModal(props){
             pword: pass
         }
         axios.post('http://localhost:5000/api/register', data).then(res=>{
-            if(res.status == 200) alert('Registered! Please Login!');
+            if(res.status == 200) {
+                alert('Registered! Please Login!');
+                navigate('/auth')
+            }
         }).catch(e=>{
             if (e.response.status == 400) {
                 setWarnct(e.response.data)

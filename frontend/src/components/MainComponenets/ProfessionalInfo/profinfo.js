@@ -65,6 +65,7 @@ function ProfInfo(props){
     const loc = useLocation();
     function handleChange(){
         if (!status){
+            if(localStorage.getItem('token') == null) return;
             axios.post('http://localhost:5000/api/updateprofinfo', {highedu: id[0], profession: id[1]}, {headers: {token: localStorage.getItem('token')}}).then(resp=>{
                 if (resp.status == 200) setStatus(!status);
             }).catch(e=>{
@@ -90,7 +91,7 @@ function ProfInfo(props){
     }, [])
     useEffect(()=>{
         console.log('Get Prof Info');
-        if (loc.pathname!='/') return;
+        if (loc.pathname!='/' || localStorage.getItem('token')==null) return;
         axios.get('http://localhost:5000/api/getprofinfo', {headers: {token: localStorage.getItem('token')}}).then(res=>{
             if (res.status == 200){
                 var arr = [3, 3];
@@ -99,6 +100,7 @@ function ProfInfo(props){
                 setId(arr);
             }
         }).catch(e=>{
+            console.log('profinfo');
             alert(e.response.data);
         })
     }, [loc])

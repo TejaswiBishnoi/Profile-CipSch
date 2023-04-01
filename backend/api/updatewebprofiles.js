@@ -15,8 +15,18 @@ async function updateWebProfiles(req, res){
     let col = db.collection('webprofiles');
     //console.log('AA')
     try{
+        let somdata = await col.findOne({email: req.user});
+        if (!somdata){
+            let userdata = await col.insertOne({...req.body.data, email: req.user});
+            if(!userdata.acknowledged){
+                res.status(500).send('Server Error!');
+                return;
+            }
+            res.status(200).send('Data Updated Successfully');
+            return;
+        }
         let userdata = await col.updateOne({email: req.user}, {$set:req.body.data});
-        if (!userdata){
+        if (!userdata.acknowledged){
             res.status(500).send('Server Error!');
             return;
         }

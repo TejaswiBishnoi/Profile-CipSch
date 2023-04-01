@@ -1,0 +1,25 @@
+[{
+  "_id": {
+    "$oid": "641f32fe3a0aa6e4e2d24327"
+  },
+  "highedu": 1,
+  "profession": 1,
+  "email": "tejaswi@example.com",
+  "interests": "4"
+},{
+  "_id": {
+    "$oid": "64201b62f3709c9cf903dd27"
+  },
+  "highedu": 4,
+  "profession": 4,
+  "email": "tejaswi@some.mail",
+  "interests": "1"
+},{
+  "_id": {
+    "$oid": "64282d684e5ca7e792449796"
+  },
+  "highedu": 3,
+  "profession": 2,
+  "email": "tejaswi@examle.org",
+  "interests": "7"
+}]

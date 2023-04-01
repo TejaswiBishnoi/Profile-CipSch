@@ -1,0 +1,18 @@
+[{
+  "_id": {
+    "$oid": "641f27323a0aa6e4e2d24325"
+  },
+  "email": "tejaswi@example.com",
+  "linkedin": "",
+  "github": "TejaswiBishnoi",
+  "facebook": "xyz",
+  "twitter": "",
+  "instagram": "",
+  "website": ""
+},{
+  "_id": {
+    "$oid": "642873cffe2d59b52e878b4b"
+  },
+  "facebook": "Abcde",
+  "email": "example17@example.cip"
+}]

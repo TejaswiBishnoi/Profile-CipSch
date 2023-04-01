@@ -14,7 +14,7 @@ function WrappedContainer(props){
     const navigate = useNavigate();
     const loc = useLocation();
     useEffect(()=>{
-        if (props.login){
+        if (props.login && loc.pathname=="/"){
             if (!localStorage.getItem('token')){
                 navigate('/auth');
                 return;

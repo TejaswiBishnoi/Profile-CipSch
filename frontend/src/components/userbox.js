@@ -4,6 +4,7 @@ import { Avatar, Box, Button, Stack, Typography } from "@mui/material";
 import EditIcon from '@mui/icons-material/Edit';
 import UserModal from "./usermodal";
 import { useTheme } from "@emotion/react";
+import { Link } from "react-router-dom";
 
 function AvtObj(props){
     if (props.data == {}){
@@ -56,7 +57,7 @@ function Userbox(props){
                         </Stack>
                     </Stack>
                     <Stack direction={'column'} justifyContent={'center'} paddingTop={'7px'} height={'100px'} sx={{display:{xs: 'none', sm:'flex'}}}>
-                        <Typography color={thm.headFont} fontSize={'17px'} fontFamily={'sans-serif'} fontWeight={'490'}>
+                        <Typography component={Link} to="/followers" color={thm.headFont} fontSize={'17px'} fontFamily={'sans-serif'} sx={{textDecoration: 'none', boxShadow: 'none'}} fontWeight={'490'}>
                             {data.followers} Followers
                         </Typography>
                     </Stack>

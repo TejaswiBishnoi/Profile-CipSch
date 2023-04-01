@@ -1,0 +1,241 @@
+[{
+  "_id": {
+    "$oid": "641eb4f762f45c16eafc7177"
+  },
+  "fname": "Tejaswi",
+  "lname": "Tejaswi",
+  "email": "tejaswi@some.mail",
+  "mobile": "",
+  "about": "",
+  "profpic": "",
+  "passhash": "",
+  "followers": 0
+},{
+  "_id": {
+    "$oid": "641ec4cc6f367b520a7fed44"
+  },
+  "fname": "Tejaswi",
+  "lname": "Tejaswi",
+  "email": "tejaswi@example.com",
+  "passhash": "$2b$10$rUmtsJZtQjUMn3/Ll6Zx6u6I9.U2eoHsc.sllQkG/mWZd88.UsUtu",
+  "mobile": "99912",
+  "about": "Stop and Stare!",
+  "profpic": "1680371815038-tejaswi@example.com.png",
+  "followers": 1
+},{
+  "_id": {
+    "$oid": "642806283684f87a1e44ec59"
+  },
+  "fname": "Tejaswi",
+  "lname": "Tejaswi",
+  "email": "tejaswi@examle.org",
+  "passhash": "$2b$10$pbI22wp3AGzd2NJN1Bji8O6Jp3QgnwcCTB/9ajFzSC02NwiMFuRs6",
+  "mobile": "",
+  "about": "",
+  "profpic": "",
+  "followers": 0
+},{
+  "_id": {
+    "$oid": "642861e872494737ce960513"
+  },
+  "fname": "Example",
+  "lname": "Account",
+  "email": "example@example.cip",
+  "passhash": "$2b$10$WROjSzAYxDFbaNSjM502OOT1.Qu11ZABa.xY24Ofaa5mN2anRloNK",
+  "mobile": "",
+  "about": "",
+  "profpic": "1680371882731-example@example.cip.png",
+  "followers": 14
+},{
+  "_id": {
+    "$oid": "642862261d0db0aba4df2c53"
+  },
+  "fname": "Example",
+  "lname": "Account",
+  "email": "example1@example.cip",
+  "passhash": "$2b$10$WROjSzAYxDFbaNSjM502OOT1.Qu11ZABa.xY24Ofaa5mN2anRloNK",
+  "mobile": "",
+  "about": "",
+  "profpic": "",
+  "followers": 0
+},{
+  "_id": {
+    "$oid": "642862301d0db0aba4df2c54"
+  },
+  "fname": "Example",
+  "lname": "Account",
+  "email": "example2@example.cip",
+  "passhash": "$2b$10$WROjSzAYxDFbaNSjM502OOT1.Qu11ZABa.xY24Ofaa5mN2anRloNK",
+  "mobile": "",
+  "about": "",
+  "profpic": "",
+  "followers": 0
+},{
+  "_id": {
+    "$oid": "642862381d0db0aba4df2c55"
+  },
+  "fname": "Example",
+  "lname": "Account",
+  "email": "example3@example.cip",
+  "passhash": "$2b$10$WROjSzAYxDFbaNSjM502OOT1.Qu11ZABa.xY24Ofaa5mN2anRloNK",
+  "mobile": "",
+  "about": "",
+  "profpic": "",
+  "followers": 0
+},{
+  "_id": {
+    "$oid": "6428623d1d0db0aba4df2c56"
+  },
+  "fname": "Example",
+  "lname": "Account",
+  "email": "example4@example.cip",
+  "passhash": "$2b$10$WROjSzAYxDFbaNSjM502OOT1.Qu11ZABa.xY24Ofaa5mN2anRloNK",
+  "mobile": "",
+  "about": "",
+  "profpic": "",
+  "followers": 0
+},{
+  "_id": {
+    "$oid": "642862411d0db0aba4df2c57"
+  },
+  "fname": "Example",
+  "lname": "Account",
+  "email": "example5@example.cip",
+  "passhash": "$2b$10$WROjSzAYxDFbaNSjM502OOT1.Qu11ZABa.xY24Ofaa5mN2anRloNK",
+  "mobile": "",
+  "about": "",
+  "profpic": "",
+  "followers": 0
+},{
+  "_id": {
+    "$oid": "642862461d0db0aba4df2c58"
+  },
+  "fname": "Example",
+  "lname": "Account",
+  "email": "example6@example.cip",
+  "passhash": "$2b$10$WROjSzAYxDFbaNSjM502OOT1.Qu11ZABa.xY24Ofaa5mN2anRloNK",
+  "mobile": "",
+  "about": "",
+  "profpic": "",
+  "followers": 0
+},{
+  "_id": {
+    "$oid": "6428628b1d0db0aba4df2c59"
+  },
+  "fname": "Example",
+  "lname": "Account",
+  "email": "example7@example.cip",
+  "passhash": "$2b$10$WROjSzAYxDFbaNSjM502OOT1.Qu11ZABa.xY24Ofaa5mN2anRloNK",
+  "mobile": "",
+  "about": "",
+  "profpic": "",
+  "followers": 0
+},{
+  "_id": {
+    "$oid": "6428628e1d0db0aba4df2c5a"
+  },
+  "fname": "Example",
+  "lname": "Account",
+  "email": "example8@example.cip",
+  "passhash": "$2b$10$TWQ6jUYDnmEaNqxbdHMpLeDNx6wXZrzDbephJYrj7mCr/mtdAuEnC",
+  "mobile": "99912",
+  "about": "Stop and Stare!",
+  "profpic": "1680359127124-tejaswi@example.com.png",
+  "followers": 1
+},{
+  "_id": {
+    "$oid": "642862911d0db0aba4df2c5b"
+  },
+  "fname": "Example",
+  "lname": "Account",
+  "email": "example9@example.cip",
+  "passhash": "$2b$10$TWQ6jUYDnmEaNqxbdHMpLeDNx6wXZrzDbephJYrj7mCr/mtdAuEnC",
+  "mobile": "99912",
+  "about": "Stop and Stare!",
+  "profpic": "1680359127124-tejaswi@example.com.png",
+  "followers": 1
+},{
+  "_id": {
+    "$oid": "642862941d0db0aba4df2c5c"
+  },
+  "fname": "Example",
+  "lname": "Account",
+  "email": "example10@example.cip",
+  "passhash": "$2b$10$TWQ6jUYDnmEaNqxbdHMpLeDNx6wXZrzDbephJYrj7mCr/mtdAuEnC",
+  "mobile": "99912",
+  "about": "Stop and Stare!",
+  "profpic": "1680359127124-tejaswi@example.com.png",
+  "followers": 1
+},{
+  "_id": {
+    "$oid": "642862971d0db0aba4df2c5d"
+  },
+  "fname": "Example",
+  "lname": "Account",
+  "email": "example11@example.cip",
+  "passhash": "$2b$10$TWQ6jUYDnmEaNqxbdHMpLeDNx6wXZrzDbephJYrj7mCr/mtdAuEnC",
+  "mobile": "99912",
+  "about": "Stop and Stare!",
+  "profpic": "1680359127124-tejaswi@example.com.png",
+  "followers": 1
+},{
+  "_id": {
+    "$oid": "6428629a1d0db0aba4df2c5e"
+  },
+  "fname": "Example",
+  "lname": "Account",
+  "email": "example12@example.cip",
+  "passhash": "$2b$10$TWQ6jUYDnmEaNqxbdHMpLeDNx6wXZrzDbephJYrj7mCr/mtdAuEnC",
+  "mobile": "99912",
+  "about": "Stop and Stare!",
+  "profpic": "1680359127124-tejaswi@example.com.png",
+  "followers": 1
+},{
+  "_id": {
+    "$oid": "642868001d0db0aba4df2c6b"
+  },
+  "fname": "Example",
+  "lname": "Account",
+  "email": "example13@example.cip",
+  "passhash": "$2b$10$TWQ6jUYDnmEaNqxbdHMpLeDNx6wXZrzDbephJYrj7mCr/mtdAuEnC",
+  "mobile": "99912",
+  "about": "Stop and Stare!",
+  "profpic": "1680359127124-tejaswi@example.com.png",
+  "followers": 1
+},{
+  "_id": {
+    "$oid": "642868051d0db0aba4df2c6c"
+  },
+  "fname": "Example",
+  "lname": "Account",
+  "email": "example14@example.cip",
+  "passhash": "$2b$10$TWQ6jUYDnmEaNqxbdHMpLeDNx6wXZrzDbephJYrj7mCr/mtdAuEnC",
+  "mobile": "99912",
+  "about": "Stop and Stare!",
+  "profpic": "1680359127124-tejaswi@example.com.png",
+  "followers": 1
+},{
+  "_id": {
+    "$oid": "642870fd55962c2bedc75260"
+  },
+  "fname": "Tejaswi",
+  "lname": "T",
+  "email": "example15@example.cip",
+  "passhash": "$2b$10$2GWhSflte6NXwldNNOL0tuCF9TFL2jb/j83fKRQSZk8TJCP1jPGf.",
+  "mobile": "",
+  "about": "",
+  "profpic": "",
+  "followers": 0
+},{
+  "_id": {
+    "$oid": "642871bf55962c2bedc75263"
+  },
+  "fname": "Example",
+  "lname": "Account",
+  "email": "example17@example.cip",
+  "passhash": "$2b$10$/6DK51DFcy8vCFH1khfBZOqOziCd1n66BCKT41zl1dRP37jCI6yKm",
+  "mobile": "",
+  "about": "",
+  "profpic": "",
+  "followers": 0
+}]

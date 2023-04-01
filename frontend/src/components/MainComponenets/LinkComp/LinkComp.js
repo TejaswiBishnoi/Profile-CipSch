@@ -63,12 +63,13 @@ function LinkComp(props){
     const [data, setData] = useState(oldData);
     useEffect(()=>{
         console.log('Get Links')
-        if (loc.pathname == '/'){
+        if (loc.pathname == '/' && localStorage.getItem('token')!=null){
             axios.get('http://localhost:5000/api/getwebprofiles', {headers: {token: localStorage.getItem('token')}}).then(res=>{
                 if (res.status == 200){
                     setData(res.data);
                 }
             }).catch(e=>{
+                console.log('linkComp')
                 alert(e.response.data)
             })
         }        
